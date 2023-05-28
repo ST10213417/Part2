@@ -90,7 +90,7 @@ namespace Part2
 
 			Console.ForegroundColor = ConsoleColor.Green;
 			//method to get user input for recipe 
-			Console.WriteLine("============USER RECIPE INPUT=============");
+			Console.WriteLine("============USER RECIPE=============");
 			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.WriteLine("Enter the number of ingredients:");
 			int ingredientCount = int.Parse(Console.ReadLine());
