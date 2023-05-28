@@ -130,6 +130,7 @@ namespace Part2
 			}
 
 			Console.WriteLine(" Your Recipe has been created successfully!");
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("==============================================================================================");
 			//used to return a value
 			return recipe;
