@@ -18,6 +18,7 @@ namespace Part2
 
 		public Ingredient(string name, double quantity, string unit, int calories, string fGroup)
 		{
+			//renamed variables to new variables
 			Name = name;
 			Quantity = quantity;
 			Unit = unit;
