@@ -173,6 +173,7 @@ namespace Part2
 		//method to display all the recipes
 		private static void DisplayAllRecipes(List<Recipe> recipes)
 		{
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("==============================================================================================");
 			if (recipes.Count == 0)
 			{
