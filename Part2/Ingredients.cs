@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Part2
 {
-	 class Ingredient
+	class Ingredient
 	{
 		public string Name { get; }
 		public double Quantity { get; set; }
@@ -18,12 +18,11 @@ namespace Part2
 
 		public Ingredient(string name, double quantity, string unit, int calories, string fGroup)
 		{
-			//renamed variables to new variables
 			Name = name;
 			Quantity = quantity;
 			Unit = unit;
 			originalQuantity = quantity;
-			Calories = calories; 
+			Calories = calories;
 			FoodGroup = fGroup;
 		}
 
