@@ -18,27 +18,33 @@ namespace Part2
 			bool exit = false;
 			while (!exit)
 			{
+				//menu that shows options user can pick
 				Console.WriteLine("Please choose an option:");
 				Console.WriteLine("1.Enter a new recipe");
-				Console.WriteLine("2.display recipe details");
-				Console.WriteLine("3.Display all recipes");
+				Console.WriteLine("2.display all recipe");
+				Console.WriteLine("3.Display recipe details");
 				Console.WriteLine("4. Scale the recipe");
 				Console.WriteLine("5. Reset quantities");
 				Console.WriteLine("6. Clear the recipe and enter a new one");
 				Console.WriteLine("7. Exit");
 
 				int option = int.Parse(Console.ReadLine());
+
+				//new object to call methods from another class
 				Recipe rec = new Recipe();
 				switch (option)
 				{
 					case 1:
+						//call input recipe method
 						Recipe recipe1 = inputRecipe ();
 						recipes.Add (recipe1);
 						break;
 					case 2:
+						//call method to display all the recips
 						DisplayAllRecipes(recipes);
 						break;
 					case 3:
+						//call method to display recope details
 						DisplayRecipeDetails(recipes);
 							break;
 
@@ -128,6 +134,7 @@ namespace Part2
 		private static void DisplayRecipeDetails(List<Recipe> recipes)
 		{
 			Console.WriteLine("==============================================================================================");
+			//if loop to check if theres any stored recipes available in the arraylist
 			if (recipes.Count == 0)
 			{
 				Console.WriteLine("No recipes available.");
@@ -137,6 +144,7 @@ namespace Part2
 			Console.WriteLine("Enter the recipe number to display details:");
 			int recipeNumber = int.Parse(Console.ReadLine());
 
+			//if else loop to check if the calories are under or over 300 calories
 			if (recipeNumber >= 1 && recipeNumber <= recipes.Count)
 			{
 				Recipe selectedRecipe = recipes[recipeNumber - 1];
@@ -164,7 +172,7 @@ namespace Part2
 				Console.WriteLine("No recipes available.");
 				return;
 			}
-
+			// display recipes in aplhabetical order
 			List<Recipe> sortedRecipes = recipes.OrderBy(r => r.name).ToList();
 
 			Console.WriteLine("All Recipes:");
