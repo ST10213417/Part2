@@ -113,7 +113,7 @@ namespace Part2
 
 				Console.WriteLine($"Enter the food group for {name}:");
 				string fGroup = Console.ReadLine();
-				recipe.AddIngredient(name, quantity,unit, calories, fGroup);
+				recipe.AddIngredient(name, quantity,unit,calories, fGroup);
 			}
 
 			//get steps from user
