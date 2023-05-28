@@ -13,6 +13,7 @@ namespace Part2
 		public string Unit { get; }
 		public int Calories { get; }
 		public string FoodGroup { get; }
+
 		private readonly double originalQuantity;
 
 		public Ingredient(string name, double quantity, string unit, int calories, string fGroup)

@@ -49,29 +49,35 @@ namespace Part2
 							break;
 
 					case 4:
+						//call scaling method from other class
 						Console.WriteLine("Enter the scaling factor (0.5, 2, or 3):");
 						double scaleFactor = double.Parse(Console.ReadLine());
 						rec.ScaleRecipe(scaleFactor);
 						rec.DisplayRecipe();
 						break;
 					case 5:
+						//call the method to rest the quatities from other class
 						rec.ResetQuantities();
 						rec.DisplayRecipe();
 						break;
 					case 6:
+						//call method to clear recipe
 						rec.ClearRecipe();
 						
 						break;
 					case 7:
+						//used to exit program
 						exit = true;
 						break;
 					default:
+						//tells user if they selected an option that isnt available
 						Console.WriteLine("Invalid option! Please try again.");
 						break;
 				}
 			}
 
 		}
+		//method to get user input for the recipes
 		static Recipe inputRecipe()
 		{
 			Console.WriteLine("==============================================================================================");
