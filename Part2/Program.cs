@@ -139,6 +139,7 @@ namespace Part2
 		//method to display recipe details
 		private static void DisplayRecipeDetails(List<Recipe> recipes)
 		{
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("==============================================================================================");
 			//if loop to check if theres any stored recipes available in the arraylist
 			if (recipes.Count == 0)
