@@ -82,15 +82,15 @@ namespace Part2
 		{
 			Console.WriteLine("==============================================================================================");
 			Console.ForegroundColor = ConsoleColor.Green;
+			Console.WriteLine("============USER RECIPE=============");
 			//prompt user to enter recipe name
 			Console.WriteLine("Please enter the recipe name:");
 			string recName = Console.ReadLine();
 			//create object for Recipe
 			Recipe recipe = new Recipe(recName);
 
-			Console.ForegroundColor = ConsoleColor.Green;
-			//method to get user input for recipe 
-			Console.WriteLine("============USER RECIPE=============");
+			
+			
 			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.WriteLine("Enter the number of ingredients:");
 			int ingredientCount = int.Parse(Console.ReadLine());
