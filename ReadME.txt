@@ -1,5 +1,5 @@
 #How to run RECIPE APP
-Link: https://github.com/ST10213417/Part2/tree/master/Part2
+Link: https://github.com/ST10213417/Part2
 
 1.Click run in Visual Studio
 
