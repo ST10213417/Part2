@@ -12,6 +12,8 @@ namespace Part2
 		private List<string> steps;
 		public string name { get; }
 		public Recipe(string name)
+
+
 		{
 			ingredients = new List<Ingredient>();
 			steps = new List<string>();
@@ -22,17 +24,18 @@ namespace Part2
 		{
 		}
 
+		//adds ingredients
 		public void AddIngredient(string name, double quantity, string unit, int calories, string fGroup)
 		{
 			Ingredient ingredient = new Ingredient(name, quantity, unit, calories, fGroup);
 			ingredients.Add(ingredient);
 		}
-
+		//adds steps
 		public void AddStep(string stepDescription)
 		{
 			steps.Add(stepDescription);
 		}
-		
+		//method to display one recipe
 		public void DisplayRecipe()
 		{
 			Console.ForegroundColor = ConsoleColor.Green;
@@ -51,14 +54,16 @@ namespace Part2
 			Console.WriteLine();
 		}
 
+		//method to scale the recipe ingredients
 		public void ScaleRecipe(double scaleFactor)
 		{
 			foreach (Ingredient ingredient in ingredients)
 			{
-				ingredient.Quantity *= scaleFactor;
+				scaleFactor *= ingredient.Quantity ;
 			}
 		}
 
+		//method to calculate the total calories of the recipe ingredients
 		public int CalculateTotalCalories()
 		{
 			int totalCalories = 0;
@@ -68,19 +73,23 @@ namespace Part2
 			}
 			return totalCalories;
 		}
-	
-	public void ResetQuantities()
+		
+		//method to reset ingredient quantities
+		public void ResetQuantities()
 		{
 			foreach (Ingredient ingredient in ingredients)
 			{
 				ingredient.ResetQuantity();
 			}
 		}
-
+		//method to clear recipe details
 		public void ClearRecipe()
 		{
-			ingredients.Clear();
-			steps.Clear();
+			foreach (Ingredient ingredient in ingredients)
+			{
+				ingredients.Clear();
+				steps.Clear();
+			}
 		}
 	}
 }

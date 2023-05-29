@@ -15,29 +15,29 @@ namespace Part2
 
 			List<Recipe> recipes = new List<Recipe>();
 
-			bool exit = false;
-			while (!exit)
+			bool Quit = false;
+			while (!Quit)
 			{
 				//menu that shows options user can pick
 				Console.WriteLine("Please choose an option:");
 				Console.WriteLine("1.Enter a new recipe");
-				Console.WriteLine("2.display all recipe");
+				Console.WriteLine("2.Display all recipes");
 				Console.WriteLine("3.Display recipe details");
 				Console.WriteLine("4. Scale the recipe");
 				Console.WriteLine("5. Reset quantities");
 				Console.WriteLine("6. Clear the recipe and enter a new one");
 				Console.WriteLine("7. Exit");
 
-				int option = int.Parse(Console.ReadLine());
+				int Choice = int.Parse(Console.ReadLine());
 
 				//new object to call methods from another class
 				Recipe rec = new Recipe();
-				switch (option)
+				switch (Choice)
 				{
 					case 1:
 						//call input recipe method
-						Recipe recipe1 = inputRecipe ();
-						recipes.Add (recipe1);
+						Recipe Recipe1 = inputRecipe ();
+						recipes.Add (Recipe1);
 						break;
 					case 2:
 						//call method to display all the recips
@@ -67,11 +67,11 @@ namespace Part2
 						break;
 					case 7:
 						//used to exit program
-						exit = true;
+						Quit = true;
 						break;
 					default:
 						//tells user if they selected an option that isnt available
-						Console.WriteLine("Invalid option! Please try again.");
+						Console.WriteLine("Option! Please try again.");
 						break;
 				}
 			}
@@ -82,9 +82,9 @@ namespace Part2
 		{
 			Console.WriteLine("==============================================================================================");
 			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine("============USER RECIPE=============");
+			Console.WriteLine("============USER RECIPE DETAILS=============");
 			//prompt user to enter recipe name
-			Console.WriteLine("Please enter the recipe name:");
+			Console.WriteLine("Recipe name:");
 			string recName = Console.ReadLine();
 			//create object for Recipe
 			Recipe recipe = new Recipe(recName);
@@ -92,32 +92,32 @@ namespace Part2
 			
 			
 			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.WriteLine("Enter the number of ingredients:");
+			Console.WriteLine("Number of ingredients:");
 			int ingredientCount = int.Parse(Console.ReadLine());
 
 			//used a for loop to count the ingredients
 			for (int i = 0; i < ingredientCount; i++)
 			{
 				//here im prompting the user to add details about the ingredients
-				Console.WriteLine($"Enter the name of ingredient {i + 1}:");
+				Console.WriteLine($"Ingredient name {i + 1}:");
 				string name = Console.ReadLine();
 
-				Console.WriteLine($"Enter the quantity of {name}:");
+				Console.WriteLine($"Quantity of {name}:");
 				double quantity = double.Parse(Console.ReadLine());
 
-				Console.WriteLine($"Enter the unit of measurement for {name}:");
+				Console.WriteLine($"Unit of measurement for {name}:");
 				string unit = Console.ReadLine();
 
-				Console.WriteLine($"Enter the number of calories for {name}:");
+				Console.WriteLine($"Calories for {name}:");
 				int calories = int.Parse(Console.ReadLine());
 
-				Console.WriteLine($"Enter the food group for {name}:");
+				Console.WriteLine($"Food group for {name}:");
 				string fGroup = Console.ReadLine();
 				recipe.AddIngredient(name, quantity,unit,calories,fGroup);
 			}
 
 			//get steps from user
-			Console.WriteLine("Enter the number of steps:");
+			Console.WriteLine("Number of steps:");
 			int stepCount = int.Parse(Console.ReadLine());
 
 			//loop to count the steps stepCount
@@ -150,12 +150,12 @@ namespace Part2
 			}
 
 			Console.WriteLine("Enter the recipe number to display details:");
-			int recipeNumber = int.Parse(Console.ReadLine());
+			int recipeNum = int.Parse(Console.ReadLine());
 
 			//if else loop to check if the calories are under or over 300 calories
-			if (recipeNumber >= 1 && recipeNumber <= recipes.Count)
+			if (recipeNum >= 1 && recipeNum <= recipes.Count)
 			{
-				Recipe selectedRecipe = recipes[recipeNumber - 1];
+				Recipe selectedRecipe = recipes[recipeNum - 1];
 				selectedRecipe.DisplayRecipe();
 
 				int totalCalories = selectedRecipe.CalculateTotalCalories();
