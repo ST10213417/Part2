@@ -71,7 +71,7 @@ namespace Part2
 						break;
 					default:
 						//tells user if they selected an option that isnt available
-						Console.WriteLine("Option! Please try again.");
+						Console.WriteLine("Option! Please try enter a valid option.");
 						break;
 				}
 			}
