@@ -36,3 +36,12 @@ This will Clear recipe that has been entered and prompt user to enter new one
 
 if option #7
 ends program
+
+#Changes i made(Total words:133)
+
+This updated code has 7 options on the menu available now unlike the part 1. This program allows users to enter more than one recipe
+ and store more than one recipe at a time. I switched my arrays to list which is a c# version of arraylist. The contents/objects can
+ be accessed through their respective index which allows to sort, search and modify list. The Program is making use of getters and 
+setters now. I also added new methods such as “CalculateTotalCalories” and I make use of delegates to calculate the calories.The main
+ has a new method to get user input, a method to display recipe details, method to display all the recipes at once in alphabetical order,
+ method to calculate total calories of ingredients and warn the user if calories exceed 300.
